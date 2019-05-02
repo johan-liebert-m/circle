@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>circle</title>
+
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<!-- angularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="dadi">
+
+<style>
+body { background: lightblue }
+* { font-size: 25px }
+button { font-size: 50px }
+#circle { background-color: red; border-radius: 50%; margin: 0 55% 0 45%; transform: translate(-50%, -50%); transition: all .5s }
+</style>
+</head>
+<body ng-app="" class="container-fluid">
+<br>
+<form class="form-group">
+<input type="number" ng-model="R" class="form-control" id="input" min="0" max="600">
+</form>
+<button class="btn btn-block" onclick="sc()" id="btn">calculer la circonferance et la surface</button><br>
+<p><b>Circonference :</b><p id="demo1"></p></p>
+<p><b>Surface :</b><p id="demo2"></p></p><br>
+<div id="circle" style="width: {{R/2}}px; height: {{R/2}}px"></div>
+<script>
+let C = 0;
+let S = 0;
+document.getElementById("demo1").innerHTML = C;
+document.getElementById("demo2").innerHTML = S;
+function sc() {
+let R = document.getElementById("input").value;
+C = R * 2 * Math.PI;
+S = R ** 2 * Math.PI;
+document.getElementById("demo1").innerHTML = C.toFixed(2);
+document.getElementById("demo2").innerHTML = S.toFixed(2);
+}
+</script>
+</body>
+</html>
