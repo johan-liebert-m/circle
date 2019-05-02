@@ -1,2 +1,2 @@
-# inversed
-inverses words
+# circle
+circle properties
